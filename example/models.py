@@ -11,5 +11,18 @@ class StockSubscription(models.Model):
         return '"' + self.symbol + '" ' + str(self.notificationsPerDay) + ' per day'
 
     @property
-    def nextNotificationTime(self):
+    def next_notification_time(self):
         return self.lastNotified + datetime.timedelta(hours=24/self.notificationsPerDay)
+
+
+class RelatedSubscription(models.Model):
+    baseSubscription = models.ForeignKey(StockSubscription)
+    relatednessFactor = models.FloatField()
+
+    def __str__(self):
+        return 'Stocks related to ' + str(self.baseSubscription) + \
+               ' with a relatedness factor of ' + str(self.relatednessFactor)
+
+    @property
+    def next_notification_time(self):
+        return self.baseSubscription.next_notification_time
