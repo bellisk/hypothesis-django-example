@@ -11,5 +11,5 @@ class StockSubscription(models.Model):
         return '"' + self.symbol + '" ' + str(self.notificationsPerDay) + ' per day'
 
     @property
-    def nextNotificationTime(self):
+    def next_notification_time(self):
         return self.lastNotified + datetime.timedelta(hours=24/self.notificationsPerDay)

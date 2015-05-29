@@ -7,4 +7,4 @@ from mysite.example.models import StockSubscription
 class StockSubscriptionTestCase(TestCase):
     @given(models(StockSubscription))
     def test_next_notification_after_last_notification(self, subscription):
-        self.assertTrue(subscription.nextNotificationTime > subscription.lastNotified)
+        self.assertTrue(subscription.next_notification_time > subscription.lastNotified)
