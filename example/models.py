@@ -1,6 +1,7 @@
 from django.db import models
 import datetime
 
+
 class StockSubscription(models.Model):
     symbol = models.CharField(max_length=8)
     lastNotified = models.DateTimeField(auto_now_add=True)
@@ -8,11 +9,12 @@ class StockSubscription(models.Model):
     value = models.IntegerField()
 
     def __str__(self):
-        return '"' + self.symbol + '" ' + str(self.notificationsPerDay) + ' per day'
+        return '"{0}" {1} per day'.format(self.symbol, self.notificationsPerDay)
 
     @property
     def next_notification_time(self):
         return self.lastNotified + datetime.timedelta(hours=24/self.notificationsPerDay)
+
 
 class Portfolio(models.Model):
     subscriptions = models.ManyToManyField(StockSubscription, related_name="portfolios")
@@ -22,6 +24,7 @@ class Portfolio(models.Model):
     
     def __str__(self):
         return "A portfolio of stock subscriptions."
+
 
 def median(l):
     if len(l) == 0:
