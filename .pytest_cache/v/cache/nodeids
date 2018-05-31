@@ -1,4 +1,3 @@
 [
-  "mysite/example/tests.py::StockSubscriptionTestCase::test_next_notification_after_last_notification", 
-  "mysite/example/tests.py::PortfolioTestCase::test_median"
+  "very_simple_example.py::test_mysort"
 ]

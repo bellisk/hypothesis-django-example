@@ -1,4 +1,7 @@
 {
+  "mysite/example/test_example.py::PortfolioTestCase::test_median": true, 
+  "mysite/example/test_example.py::StockSubscriptionTestCase::test_next_notification_after_last_notification": true, 
   "mysite/example/tests.py::PortfolioTestCase::test_median": true, 
-  "mysite/example/tests.py::StockSubscriptionTestCase::test_next_notification_after_last_notification": true
+  "mysite/example/tests.py::StockSubscriptionTestCase::test_next_notification_after_last_notification": true, 
+  "very_simple_example.py::test_mysort": true
 }
