@@ -1,0 +1,3 @@
+[
+  "mysite/example/tests.py::StockSubscriptionTestCase::test_next_notification_after_last_notification"
+]
